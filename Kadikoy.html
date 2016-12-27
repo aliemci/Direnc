@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kadıköy'e gidiş</title>
+</head>
+<body>
+    <p id="kadikoy"></p>
+
+    <center><button  id="devam" onclick="devam()"> Devam </button></center>
+    <button id="kapat" onclick="audio.play()">Müziği aç</button>
+
+    <script>
+        var yazi2="<center><b>Beşiktaş'tan çıktın yola. Deniz hafif dalgalı, hava oldukça serin. Sen de iskeleden Caddebostan adlı vapura biniyorsun. </b></center>";
+        document.getElementById("kadikoy").innerHTML="<center><img id='resim' src='besiktasiskele.jpg'></center>" + yazi2;
+        audio = new Audio();
+        audio.src = "GTA.mp3";
+        audio.loop = false;
+        audio.autoplay = false;
+
+
+        function devam(){
+        document.getElementById("kadikoy").innerHTML="<center><img id='resim' src='koltuk1.jpeg'></center>" +
+            "<center><b>Nerden baksan 80'lerden kalma bu binlerce ton ağırlındaki ulaşım aracının pupa tarafına geçip, yarı açık mekanına oturuyorsun.</b></center>"+
+            "<center><button id='solabak' onclick='sola()'>Sola bak</button> ";
+        document.getElementById("devam").remove();
+
+    }
+    function sola(){
+        document.getElementById("kadikoy").innerHTML ="<center><img id='resim' src='besiktas.jpeg'></center>" +
+            "<center><b>Soluna doğru döndüğünde Beşiktaş'ın Galata'ya doğru olan tarafını görüyorsun. İstanbul'un şehirleşmesi gözler önünde!</b></center>"+
+            "<center><button id='istguzel' onclick='istguzel()'>İstanbul ne güzel ya !</button></center>"+
+            "<center><button id='istkotu' onclick='istkotu()'>İstanbul ne kadar kötü !</button></center>";
+        document.getElementById("solabak").remove();
+    }
+    function istkotu(){
+        document.getElementById("kadikoy").innerHTML ="<center><img src='sonsuz.jpeg'></center>"+
+            "<center><b>Sen misin kötü diyen?! Bindiğin vapur hiç bilmediğin bir yere götürecek seni. Buna emin misin ?</b></center><hr/>"+
+            '<center><button onclick=\'location.href="bilinmemezlik.html"\'>Bilinmeyeni görelim</button>'+
+            '<button onclick="istguzel()">Belkide o kadar kötü değildir</button>';
+
+
+    }
+    function istguzel(){
+        document.getElementById("kadikoy").innerHTML ="<center><img id='resim' src='karabulut.jpg'></center>" +
+            "<center><b>Demez olaydın. Karabulutlar üşüştü tepene. Yağmur yağdı yağacak üzerine, belli ki fırtına yolunu gözlemiş. İçine biraz heyecan katılıyor. Gondol vari bir seyahat seni bekler.<br/></b></center>"+
+            "<center><button id='dalga' onclick='dalga()'>DALGALAR</button>"+
+            "<center><button onclick='yildirim()'>YILDIRIM</button> ";
+    }
+    function dalga(){
+        document.getElementById("kadikoy").innerHTML = "<center><img id='resim' src='dalga.gif'></center>"+
+            "<center><b>Köpek gibi dalgaya yakalandın.</b></center>"+
+            "<center><button id='bekle' onclick='bekle()'>Bekle</button></center>"+
+            "<center><button id='İceri' onclick='iceri()'>İçeri gir</button></center>";
+    }
+    function bekle(){
+        document.getElementById("kadikoy").innerHTML = "<center><img id='resim' src='drowning.jpg'></center>"+
+             "<center><b>Böyle dalgalarla başa çıkabileceğini düşünmen aşırı üzücü. Vapur neredeyse yan yatıyordu. Dengeni kaybettiğin anda denizi boyladın. Ama hepsi senin kararındı. Boğazın serin suları seni başka bir gerçekliğe götürdü.</b></center>"+
+             '<button onclick=\'location.href="Direnc.html"\'>Yeniden dene</button>';
+    }
+    function iceri(){
+        document.getElementById("kadikoy").innerHTML = "<center><img src='vapur.jpg'></center>"+
+            "<center><b>İçeride kimse yok! Şaşkınlık bir anda korkuya dönüştü. Kafan her saniye farklı bir kıyamet senaryosu hazırlıyor senin için. Karar vermenin önemi daha da artıyor her geçen saniye.</b></center>"+
+            "<center><button onclick='kantin()'>oo Kantin boş</button>"+
+            "<center><button onclick='dur()'>Dur ve bekle</button> "+
+            "<center><button onclick='cool()'>Cool takıl</button> ";
+    }
+    function kantin(){
+        document.getElementById("kadikoy").innerHTML="<center><img src='seadead.jpg'></center>"+
+            "<center><b>Otlakçılık mı dersin? Ölücülük mü dersin ? Ne dersen de o yolda gittin işte. Fakat mutluluk gözlerinin ardında ukde kaldı. Kantinin gerçekten boş olduğunu gördün. Sana komplo mu kurulmuştu?! Tek gerçek yalnız olmadığını hissetmekti</b></center>"
+            + "<center><button onclick='beyin()'>Burdan kurtul!</button>" + "<center><button onclick='bekel()'>Devam et</button></center> ";
+    }
+        function beyin(){
+            var h= prompt("Beşiktaşa bakarken kaç martı vardı?");
+            if (h==8)
+                document.getElementById("kadikoy").innerHTML="<center><b>Tebrikler korkunç uyuşturucunun etkisinden kendi becerini kullanarak kurtuldun. Ayrıca gemi yanaşmış. Kadıköye ulaşmışsın!</b></center><hr/>"+
+                    '<center><button onclick=\'location.href="Direnc.html"\'>Yeniden dene</button></center>';
+            else
+                bekel();
+        }
+
+    function yildirim(){
+        document.getElementById("kadikoy").innerHTML="<center><img src='lightning.jpg'></center>"+
+            "<center><b>Saniyeler içinde kül oldun. Dünya hayatını böyle bitirmek... Nasip!</b></center>"+
+            '<button onclick=\'location.href="Direnc.html"\'>Yeniden dene</button>';
+    }
+    function cool(){
+        document.getElementById("kadikoy").innerHTML = "<center><img src='attack.jpg'></center>"+
+            "<center><b>Cool olayım derken sol tarafında bir sancı! Oradan göğsüne doğru yayılan bir acı. Kalp krizi geçirdin. Dalgaları aşıp havuzda boğulmakta var.</b></center>"+
+            '<button onclick=\'location.href="Direnc.html"\'>Yeniden dene</button>';
+    }
+    function bekel(){
+        document.getElementById("kadikoy").innerHTML="<center><b>Denizden gelen korkunç uğultuyla birlikte aydınlık koyboldu, bir daha hiç aydınlanmamak üzere.</b></center><br/>"+
+            '<button onclick=\'location.href="Direnc.html"\'>Yeniden dene</button>';
+    }
+    function dur(){
+        document.getElementById("kadikoy").innerHTML="<center><b>Durmak. Her geçen saniye aklın seninle dalga geçiyor. " +
+            "Olmadık şeyler duyuyorsun. İşitmek senin için bir işkence halini alıyor. Miden bulanıyor. " +
+            "Hayat mutluluğun çukur aynası gibi geliyor. Gözün bulanık görüyor artık. Bir şeyler olacak! kahine gerek yok." +
+            " Durumun bedbahtlığı içinden çıkılamaz bir hâl alınca pes ediyorsun. Nihai karar iradenden çıkıyor. Artık sen sadece bir düşüncesin. Yokluğun düşüsün.<hr/>"+
+            '<button onclick=\'location.href="Direnc.html"\'>Yeniden dene</button>';
+    }
+</script>
+</body>
+</html>

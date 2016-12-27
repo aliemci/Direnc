@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DİRENÇ</title>
+</head>
+<body>
+    <p id="direnc"></p>
+    <center><img id = "resim" src="gemi.jpg" ></center>
+
+    <center><button style ="background: transparent" id="bilinmemezlik" onclick="location.href='bilinmemezlik.html'"> <hr/>BİLİNMEZLİK<hr/> </button></center>
+    <center><button style ="background: transparent" id="kadikoy" onclick="location.href='kadikoy.html'"><hr/> KADIKÖY'E<hr/> </button></center>
+    <center><button style ="background: transparent" id="osmanli" onclick="location.href='osmanli.html'"><hr/> OSMANLI'YA<hr/> </button></center>
+
+
+
+
+
+<script>
+        var yazi1 = "<center><b>Uzak bir yolculuğun eşiğindesin. Seni götürecek gemiye biniyorsun. Gemide olmayan tip yok. Her memleketten gelmiş bir iki kişi binmiş bu vasıtaya. Peki sen nereye gidiyorsun ?</b></center>";
+        document.getElementById("direnc").innerHTML= yazi1;
+
+    function bilinmemezlik(){
+        document.getElementById("bilinmemezlik").style.color = "orange";
+        document.getElementById("kadikoy").disabled = true;
+        document.getElementById("resim").src = "bermuda.jpg";
+        var q = yazi1.replace("Uzak bir yolculuğun eşiğindesin. Seni götürecek gemiye biniyorsun. Gemide olmayan tip yok. Her memleketten gelmiş bir iki kişi binmiş bu vasıtaya. Peki sen nereye gidiyorsun ?","İyi oyundu. Bermuda üçgeninde yokluğa karıştın.");
+        document.getElementById("direnc").innerHTML= q;
+        document.getElementById("kadikoy").remove();
+        document.getElementById("osmanli").remove();
+        document.getElementById("suriye").remove();
+    }
+
+
+
+</script>
+    <hr/><center>Bu oyunda "Yeniden başla" tuşu oyunu kaybettiğin mânâsına denk düşmüyor. Burada kaybetmekten ziyade iradenin sonucunu görüyorsun. Bu sebeple ki kaybettiğini düşünüp kazanacağın bir ödül arama. Zira ödül yaptığın şeyin karşılığında verilir. Kararının karşılığında değil.</center>
+</body>
+</html>
